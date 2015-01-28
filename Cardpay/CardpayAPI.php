@@ -1,6 +1,6 @@
 <?php
 /**
- * Class CardpayAPI ver 1.0.2
+ * Class CardpayAPI ver 1.0.3
  * http://www.cardpay.com
  *
  * encapsulates Cardpay API functionality
@@ -95,7 +95,7 @@ class CardpayAPI
         $xml = new DOMDocument('1.0', 'utf-8');
         $order = $xml->createElement('order');
         self::array2xml($this->order,$order);
-        return $xml->saveXML($order);
+        return $xml->saveXML($order, LIBXML_NOEMPTYTAG);
     }
 
     /**
