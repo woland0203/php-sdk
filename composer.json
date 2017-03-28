@@ -1,0 +1,22 @@
+{
+    "name": "cardpay/php-sdk",
+    "description": "CardPay PHP SDK",
+    "keywords": [
+        "cardpay",
+        "php",
+        "sdk"
+    ],
+    "homepage": "https://integration.cardpay.com",
+    "type": "sdk",
+    "version": "2.0",
+    "require": {
+        "phpunit/phpunit": "^5.3",
+        "fzaninotto/faker": "^1.6"
+    },
+    "authors": [
+        {
+            "name": "Evgenii Panov",
+            "email": "e.panov@cy.cardpay.com"
+        }
+    ]
+}
