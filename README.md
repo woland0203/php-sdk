@@ -67,13 +67,13 @@ composer require cardpay/php-sdk
 use \CardPay\Core\CardPayConfig;
 
 return (new CardPayConfig(CardPayMode::TEST))
-	->setWalletId(1234)
-	->setSecretKey('YourSecretWord')
+    ->setWalletId(1234)
+    ->setSecretKey('YourSecretWord')
     ->setClientLogin("YourLoginForPaymentManager")
     ->setClientPasswordSHA256("YourPasswordForPaymentManagerEncodedWithSHA256")
     ->setRestApiLogin("YourLoginForUsingRestApi")
     ->setRestApiPassword("YourPasswordForUsingRestApi")
-	->setLogFilepath(__DIR__.'/cardpay.log');
+    ->setLogFilepath(__DIR__.'/cardpay.log');
 ```
 
 
@@ -242,7 +242,7 @@ Card Token used instead of card information.
         ->setOrderId("1234567890")
         ...
 
-	$base64Encode = true;
+    $base64Encode = true;
     echo $cardPayPaymentPageMode->getOrderXML($base64Encode);
     
     echo $cardPayPaymentPageMode->getSHA512();
@@ -508,7 +508,7 @@ Card Token used instead of card information.
         ->setOrderId("1234567890")
         ...
 
-	$base64Encode = true;
+    $base64Encode = true;
     echo $cardPayGatewayMode->getOrderXML($base64Encode);
     
     echo $cardPayGatewayMode->getSHA512();
