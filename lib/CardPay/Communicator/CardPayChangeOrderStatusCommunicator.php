@@ -4,6 +4,7 @@ namespace CardPay\Communicator;
 
 use CardPay\Core\CardPayConfig;
 use CardPay\Exception\CardPayResponseException;
+use CardPay\Helper\CardPayXmlHelper;
 use CardPay\Validation\CardPayConfigValidator;
 
 class CardPayChangeOrderStatusCommunicator extends CardPayApiCommunicator
@@ -29,10 +30,17 @@ class CardPayChangeOrderStatusCommunicator extends CardPayApiCommunicator
             throw new CardPayResponseException("Incorrect structure of Change Order Status Response xml");
         }
 
-        if(!isset($responseXmlObject->order)){
+        if (!isset($responseXmlObject->order)) {
             throw new CardPayResponseException("Incorrect structure of Change Order Status Response xml. This xml has not order");
         }
 
         return true;
+    }
+
+    public function getResponseXmlOrderAttributes()
+    {
+        $responseXmlObject = $this->getResponseXmlObject();
+
+        return CardPayXmlHelper::getXmlAttributes($responseXmlObject->order);
     }
 }

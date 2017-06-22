@@ -128,11 +128,13 @@ class CardPayGatewayMode
 
         empty($this->getDeclineUrl()) || $xmlOrder->setAttribute("decline_url", $this->getDeclineUrl());
 
-        CardPayAttributeValidator::validate($this, "card");
-        $xmlOrder->appendChild($xml->importNode($this->getCard()->getXML(), true));
+        if(empty($this->getRecurringId())){
+            CardPayAttributeValidator::validate($this, "card");
+            $xmlOrder->appendChild($xml->importNode($this->getCard()->getXML(), true));
 
-        CardPayAttributeValidator::validate($this, "billing");
-        $xmlOrder->appendChild($xml->importNode($this->getBilling()->getXML(), true));
+            CardPayAttributeValidator::validate($this, "billing");
+            $xmlOrder->appendChild($xml->importNode($this->getBilling()->getXML(), true));
+        }
 
         if (!empty($this->getShipping())) {
             $xmlOrder->appendChild($xml->importNode($this->getShipping()->getXML(), true));
