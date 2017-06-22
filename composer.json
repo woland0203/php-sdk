@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "CardPay\\": "lib/"
+            "CardPay\\": "lib/CardPay"
         }
     },
     "authors": [
