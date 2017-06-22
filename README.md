@@ -18,7 +18,7 @@
 With composer:
 
 ```bash
-composer require cardpay/php-sdk
+composer require cardpay/php-sdk:@stable
 ```
 
 ## Usage
