@@ -1,7 +1,5 @@
 # PHP SDK for CardPay API
 
-![Logo](https://www.cardpay.com/site/templates/images/cardpay-aq-logo.png)
-
 ## API Documentation
 
    * [ CardPay API Page ](https://integration.cardpay.com/api/)
