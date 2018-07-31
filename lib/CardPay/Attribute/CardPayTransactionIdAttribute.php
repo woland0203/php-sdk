@@ -3,7 +3,7 @@
 namespace CardPay\Attribute;
 
 
-use CardPay\Validation\CardPayIntegerValidator;
+use CardPay\Validation\CardPayStringValidator;
 
 trait CardPayTransactionIdAttribute
 {
@@ -11,7 +11,7 @@ trait CardPayTransactionIdAttribute
 
     public function setTransactionId($transactionId)
     {
-        CardPayIntegerValidator::validate($transactionId, "Transaction id", false);
+        CardPayStringValidator::validate($transactionId, "Transaction id", 1, 256);
 
         $this->transactionId = $transactionId;
 
